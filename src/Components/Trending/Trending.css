@@ -54,3 +54,11 @@
     color: var(--green2);
     text-align: center;
   }
+
+  .trending-container{
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+  }

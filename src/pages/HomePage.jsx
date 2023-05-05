@@ -1,12 +1,14 @@
 
 import { Trending } from "../Components/Trending/Trending";
 import { useApi } from "../CustomHooks/useApi";
+import { Carousel } from "../Components/Carousel/Carousel";
 
 function HomePage() {
   const { trendingShows, loading } = useApi();
   console.log(trendingShows);
   return (
     <>
+      <Carousel/>
       <Trending>
         {!loading && trendingShows.map((show) => (
           <>
@@ -21,7 +23,6 @@ function HomePage() {
           </>
         ))}
       </Trending>
-
     </>
   );
 }

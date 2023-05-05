@@ -5,10 +5,10 @@ function Trending({ children }) {
   return (
     <>
       <section className="horizontal-movieContainer">
-        <div>
+        <div className="trending-container">
           <h2 className="trending-title">Main TV Shows</h2>
-        </div>
         <article className="trendingPreview-movieList">{children}</article>
+        </div>
       </section>
     </>
   );

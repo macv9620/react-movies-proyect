@@ -3,7 +3,7 @@ import logoIcon from "../../assets/drama.png";
 
 function Header() {
   return (
-    <header className="header">
+    <header className="main-header">
       <div className="header-info">
         <p className="header-info-welcome">Your-Show</p>
 
