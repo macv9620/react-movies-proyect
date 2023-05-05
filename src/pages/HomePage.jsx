@@ -1,3 +1,4 @@
+
 import { Trending } from "../Components/Trending/Trending";
 import { useApi } from "../CustomHooks/useApi";
 
@@ -20,6 +21,7 @@ function HomePage() {
           </>
         ))}
       </Trending>
+
     </>
   );
 }

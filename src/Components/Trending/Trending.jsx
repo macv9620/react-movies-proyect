@@ -4,9 +4,9 @@ import "./Trending.css";
 function Trending({ children }) {
   return (
     <>
-      <section className="">
-        <div className="">
-          <h2>Main TV Shows</h2>
+      <section className="horizontal-movieContainer">
+        <div>
+          <h2 className="trending-title">Main TV Shows</h2>
         </div>
         <article className="trendingPreview-movieList">{children}</article>
       </section>
