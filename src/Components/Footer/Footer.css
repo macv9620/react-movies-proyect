@@ -1,0 +1,15 @@
+.page-footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--green1);
+    color: var(--ligth-grey);
+}
+
+.footer-author{
+    font-weight: 600;
+}
+
+.footer-text{
+    font-size: 12px;
+}

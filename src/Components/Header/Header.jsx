@@ -6,7 +6,6 @@ function Header() {
     <header className="main-header">
       <div className="header-info">
         <p className="header-info-welcome">Your-Show</p>
-
       </div>
       <div className="header-logo">
         <img src={logoIcon} className="logo" />

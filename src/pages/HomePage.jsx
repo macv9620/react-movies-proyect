@@ -1,30 +1,39 @@
+import { Trending } from '../Components/Trending/Trending'
+import { useApi } from '../CustomHooks/useApi'
+import { Carousel } from '../Components/Carousel/Carousel'
+import { PageFooter } from '../Components/Footer/Footer'
 
-import { Trending } from "../Components/Trending/Trending";
-import { useApi } from "../CustomHooks/useApi";
-import { Carousel } from "../Components/Carousel/Carousel";
+const BASE_URL_IMAGE = 'https://image.tmdb.org/t/p/w500'
 
-function HomePage() {
-  const { trendingShows, loading } = useApi();
-  console.log(trendingShows);
+function HomePage () {
+  const {
+    topRatedShows,
+    loadingTopRated,
+    trendingShows,
+    loadingTrendingShows
+  } = useApi()
+
   return (
     <>
-      <Carousel/>
+      {!loadingTrendingShows && <Carousel trendingShows={trendingShows} />}
       <Trending>
-        {!loading && trendingShows.map((show) => (
-          <>
-            <div className="movie-container">
-              <img
-                className="movie-img"
-                alt=""
-                title=""
-                src={show.image.medium}
-              />
-            </div>
-          </>
-        ))}
+        {!loadingTopRated &&
+          topRatedShows.map((show, i) => {
+            return (
+              <li key={i} className='movie-container'>
+                <img
+                  className='movie-img'
+                  alt=''
+                  title=''
+                  src={BASE_URL_IMAGE + show.poster_path}
+                />
+              </li>
+            )
+          })}
       </Trending>
+      <PageFooter />
     </>
-  );
+  )
 }
 
-export { HomePage };
+export { HomePage, BASE_URL_IMAGE }

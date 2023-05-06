@@ -10,11 +10,13 @@
   z-index: 2;
 }
 
+
 .header-info-welcome {
   font-family: 'Courier New', Courier, monospace;
   font-size: 25px;
   padding-left: 25px;
   font-weight: 600;
+  margin: 0;
 }
 
 .header-info-shows {

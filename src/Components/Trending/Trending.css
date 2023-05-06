@@ -56,9 +56,11 @@
   }
 
   .trending-container{
-    height: 350px;
+    height: 380px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    padding-top: 25px;
+    padding-bottom: 25px;
 
   }

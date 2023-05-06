@@ -1,17 +1,17 @@
-import "./Trending.css";
+import './Trending.css'
 
 // eslint-disable-next-line react/prop-types
-function Trending({ children }) {
+function Trending ({ children }) {
   return (
     <>
-      <section className="horizontal-movieContainer">
-        <div className="trending-container">
-          <h2 className="trending-title">Main TV Shows</h2>
-        <article className="trendingPreview-movieList">{children}</article>
+      <section className='horizontal-movieContainer'>
+        <div className='trending-container'>
+          <h2 className='trending-title'>Top rated TV shows</h2>
+          <ul className='trendingPreview-movieList'>{children}</ul>
         </div>
       </section>
     </>
-  );
+  )
 }
 
-export { Trending };
+export { Trending }

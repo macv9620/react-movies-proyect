@@ -10,9 +10,11 @@
 
 .show-title{
     text-align: start;
-    vertical-align: top;
     color: white;
+    font-size: 25px;
     text-shadow: 0 0 3px #161616, 0 0 5px #0f0f0f;
+    position: absolute;
+    top: px;
 }
 
 .d-block .mx-auto .d-block .w-25{
