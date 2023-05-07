@@ -2,6 +2,7 @@ import { useState } from 'react'
 
 function useModal () {
   const [modalIsActive, setModalIsActive] = useState(false)
+  const [modalContent, setModalContent] = useState({})
 
   const openModal = ({
     id,
@@ -15,6 +16,13 @@ function useModal () {
       name,
       score,
       overview)
+    setModalContent({
+      id,
+      imgURL,
+      name,
+      score,
+      overview
+    })
     setModalIsActive(true)
   }
 
@@ -22,7 +30,7 @@ function useModal () {
     setModalIsActive(false)
   }
 
-  return { openModal, modalIsActive, setModalIsActive, closeModal }
+  return { openModal, modalIsActive, setModalIsActive, closeModal, modalContent }
 }
 
 export { useModal }

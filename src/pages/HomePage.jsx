@@ -19,7 +19,8 @@ function HomePage () {
   const {
     openModal,
     modalIsActive,
-    closeModal
+    closeModal,
+    modalContent
   } = useModal()
   console.log(topRatedShows)
   return (
@@ -48,7 +49,7 @@ function HomePage () {
             )
           })}
       </Trending>
-      {modalIsActive && <ModalDetail />}
+      {modalIsActive && <ModalDetail modalContent={modalContent} />}
       {modalIsActive && <CloseModalButton closeModal={closeModal} />}
       <PageFooter />
     </>

@@ -1,25 +1,33 @@
 import React from 'react'
 import './ModalDetail.css'
+import { useModal } from '../../CustomHooks/useModal'
 
-const ModalDetail = () => {
+const ModalDetail = ({ modalContent }) => {
+  const {
+    id,
+    imgURL,
+    name,
+    score,
+    overview
+  } = modalContent
+
+  console.log(modalContent)
   return (
     <div className='movieDetail-modal'>
       <div
         className='modal-background-img'
         style={{
-          backgroundImage: 'url("https://image.tmdb.org/t/p/w500/ggFHVNu6YYI5L9pCfOacjizRGt.jpg")',
+          backgroundImage: `url(${imgURL})`,
           backgroundRepeat: 'no-repeat',
           backgroundSize: 'contain',
           backgroundPosition: 'center'
         }}
       >
         <section id='movieDetail' className='movieDetail-container'>
-          <h1 className='movieDetail-title'>Renfield</h1>
-          <span className='movieDetail-score'>7.3</span>
+          <h1 className='movieDetail-title'>{name}</h1>
+          <span className='movieDetail-score'>{score}</span>
           <p className='movieDetail-description'>
-            Having grown sick and tired of his centuries as Dracula's lackey,
-            Renfield finds a new lease on life — and maybe even redemption — when
-            he falls for feisty, perennially angry traffic cop Rebecca Quincy.
+            {overview}
           </p>
         </section>
       </div>
