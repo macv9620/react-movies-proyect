@@ -36,18 +36,34 @@ function useApiDetail (id) {
     // console.log(showDetail)
     setTimeout(() => {
       if (showDetail) {
+        console.log('showDetail', showDetail)
         console.log('Lamando API ShowSeasonsDetail')
-        // console.log(id)
-        // console.log(showDetail)
-        api.get('tv/1396/season/1')
-          .then((res) => {
-            setShowSeasonsDetail(res)
-            // console.log(showDetail)
-            // console.log(showSeasonsDetail)
-          })
-          .catch((err) => {
-            console.log(err)
-          })
+        const numberOfSeasons = showDetail.data.number_of_seasons
+
+        const seasonsCompleteDetail = []
+
+        for (let seasonNumber = 1; seasonNumber <= numberOfSeasons; seasonNumber++) {
+          console.log(seasonNumber)
+          api.get(`tv/${id}/season/${seasonNumber}`)
+            .then((res) => {
+              seasonsCompleteDetail.push(res)
+              if (seasonNumber === numberOfSeasons) {
+                setShowSeasonsDetail(seasonsCompleteDetail)
+                console.log(seasonsCompleteDetail)
+              }
+            })
+            .catch((err) => {
+              console.log(err)
+            })
+        }
+
+        // api.get('tv/1396/season/1')
+        //   .then((res) => {
+        //     setShowSeasonsDetail(res)
+        //   })
+        //   .catch((err) => {
+        //     console.log(err)
+        //   })
         // console.log(showSeasonsDetail)
       }
     }, 0)
