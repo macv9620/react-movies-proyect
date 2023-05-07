@@ -21,7 +21,7 @@ function HomePage () {
     closeModal,
     modalContent
   } = useModal()
-  console.log(topRatedShows)
+  // console.log(topRatedShows)
   return (
     <>
       {(!loadingTrendingShows) && <Carousel trendingShows={trendingShows} modalIsActive={modalIsActive} openModal={openModal} />}
@@ -54,4 +54,5 @@ function HomePage () {
   )
 }
 
+// eslint-disable-next-line react-refresh/only-export-components
 export { HomePage, BASE_URL_IMAGE }

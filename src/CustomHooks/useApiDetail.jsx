@@ -13,12 +13,10 @@ const api = axios.create({
 })
 
 function useApiDetail (id) {
+  // const [loadingShowDetail, setLoadingShowDetail] = useState(false)
   const [showDetail, setShowDetail] = useState(null)
-  // eslint-disable-next-line no-unused-vars
-  const [loadingShowDetail, setLoadingShowDetail] = useState(false)
-
-  // const [showId, setShowId] = useState('1396')
-
+  const [showSeasonsDetail, setShowSeasonsDetail] = useState(null)
+  // hacer varias peticiones
   useEffect(() => {
     setTimeout(() => {
       console.log('Lamando API ShowDetail')
@@ -27,13 +25,35 @@ function useApiDetail (id) {
         .get(`tv/${id}`)
         .then((res) => {
           setShowDetail(res)
-          setLoadingShowDetail(false)
+          // console.log(showDetail)
+          // setLoadingShowDetail(false)
         })
         .catch((err) => console.log(err))
     }, 0)
   }, [id])
 
-  return { showDetail }
+  useEffect(() => {
+    // console.log(showDetail)
+    setTimeout(() => {
+      if (showDetail) {
+        console.log('Lamando API ShowSeasonsDetail')
+        // console.log(id)
+        // console.log(showDetail)
+        api.get('tv/1396/season/1')
+          .then((res) => {
+            setShowSeasonsDetail(res)
+            // console.log(showDetail)
+            // console.log(showSeasonsDetail)
+          })
+          .catch((err) => {
+            console.log(err)
+          })
+        // console.log(showSeasonsDetail)
+      }
+    }, 0)
+  }, [showDetail, id])
+
+  return { showDetail, showSeasonsDetail }
 }
 
 export { useApiDetail }

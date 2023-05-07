@@ -1,18 +1,18 @@
 /* eslint-disable react/prop-types */
 import React from 'react'
 import './MovieDetail.css'
-import { useParams } from 'react-router-dom'
-import { useApiDetail } from '../../CustomHooks/useApiDetail'
+// import { useParams } from 'react-router-dom'
+// import { useApiDetail } from '../../CustomHooks/useApiDetail'
 
 const BASE_URL_IMAGE = 'https://image.tmdb.org/t/p/w500'
 
-const MovieDetail = () => {
-  const { id } = useParams()
-  const { showDetail } = useApiDetail(id)
+const MovieDetail = ({ showDetail }) => {
+  // const { id } = useParams()
+  // const { showDetail } = useApiDetail(id)
   if (!showDetail) {
     return <p>Cargando</p>
   }
-  console.log(showDetail)
+  // console.log(showDetail)
   return (
     <div
       style={{
