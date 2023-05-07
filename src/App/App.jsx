@@ -1,14 +1,19 @@
-import "./App.css";
-import { Header } from "../Components/Header/Header.jsx";
-import { HomePage } from "../pages/HomePage";
+import './App.css'
+import { Header } from '../Components/Header/Header.jsx'
+import { BrowserRouter } from 'react-router-dom'
+import { RoutesIndex } from '../routes'
+import { PageFooter } from '../Components/Footer/Footer'
 
-function App() {
+function App () {
   return (
     <>
-      <Header />
-      <HomePage />
+      <BrowserRouter>
+        <Header />
+        <RoutesIndex />
+        <PageFooter />
+      </BrowserRouter>
     </>
-  );
+  )
 }
 
-export { App };
+export { App }

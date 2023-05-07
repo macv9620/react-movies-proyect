@@ -23,8 +23,7 @@
 
 .movieDetail-container {
     width: 100%;
-    border-top-left-radius: 16px;
-    border-top-right-radius: 16px;
+    border-radius: 16px;
     background: white;
     padding: 15px;
 
@@ -54,4 +53,22 @@
     text-align: justify;
   }
 
+  .button-container{
+    display: flex;
+    justify-content: center;
+  }
+
+  .more-detail-button{
+    border-style: none;
+    margin-top: 10px;
+    background-color: var(--green1);
+    color: white;
+    width: 100px;
+    border-radius: 8px;
+  }
+
+  .more-detail-button:hover{
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    transition: 1ms;
+  }
   

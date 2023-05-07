@@ -14,7 +14,7 @@ const api = axios.create({
   }
 })
 
-function useApi () {
+function useApiHome () {
   const [topRatedShows, setTopRatedShows] = useState('')
   const [loadingTopRated, setLoadingTopRated] = useState(true)
 
@@ -54,4 +54,4 @@ function useApi () {
   return { topRatedShows, loadingTopRated, trendingShows, loadingTrendingShows }
 }
 
-export { useApi }
+export { useApiHome }

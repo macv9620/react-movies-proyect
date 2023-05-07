@@ -1,6 +1,7 @@
 import React from 'react'
 import './ModalDetail.css'
 import { useModal } from '../../CustomHooks/useModal'
+import { Link } from 'react-router-dom'
 
 const ModalDetail = ({ modalContent }) => {
   const {
@@ -29,6 +30,11 @@ const ModalDetail = ({ modalContent }) => {
           <p className='movieDetail-description'>
             {overview}
           </p>
+          <div className='button-container'>
+            <button className='more-detail-button'>
+              <Link to={`show-detail/${id}`}>More detail</Link>
+            </button>
+          </div>
         </section>
       </div>
     </div>

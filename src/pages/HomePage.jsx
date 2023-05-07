@@ -1,7 +1,6 @@
 import { Trending } from '../Components/Trending/Trending'
-import { useApi } from '../CustomHooks/useApi'
+import { useApiHome } from '../CustomHooks/useApiHome'
 import { Carousel } from '../Components/Carousel/Carousel'
-import { PageFooter } from '../Components/Footer/Footer'
 import { useModal } from '../CustomHooks/useModal'
 import { ModalDetail } from '../Components/Modal/ModalDetail'
 import { CloseModalButton } from '../Components/CloseModalButton/CloseModalButton'
@@ -14,7 +13,7 @@ function HomePage () {
     loadingTopRated,
     trendingShows,
     loadingTrendingShows
-  } = useApi()
+  } = useApiHome()
 
   const {
     openModal,
@@ -51,7 +50,6 @@ function HomePage () {
       </Trending>
       {modalIsActive && <ModalDetail modalContent={modalContent} />}
       {modalIsActive && <CloseModalButton closeModal={closeModal} />}
-      <PageFooter />
     </>
   )
 }
