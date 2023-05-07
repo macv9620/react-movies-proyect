@@ -20,3 +20,7 @@
 .d-block .mx-auto .d-block .w-25{
     height: 30px;
 }
+
+.carousel-img{
+    cursor: pointer;
+}

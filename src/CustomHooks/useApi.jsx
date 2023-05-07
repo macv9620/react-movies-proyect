@@ -23,6 +23,7 @@ function useApi () {
 
   useEffect(() => {
     setTimeout(() => {
+      console.log('Lamando API TopRated')
       api
         .get('tv/top_rated')
         .then((res) => res.data.results)
@@ -36,13 +37,14 @@ function useApi () {
 
   useEffect(() => {
     setTimeout(() => {
+      console.log('Lamando API Trending')
       api
-        .get('trending/tv/day')
+        .get(
+          'trending/tv/day')
         .then((res) => res.data.results.slice(0, 10))
         .then((trendingShows) => {
           setTrendingShows(trendingShows)
           setLoadingTrendingShows(false)
-          console.log(trendingShows)
         })
 
         .catch((err) => console.log(err))
