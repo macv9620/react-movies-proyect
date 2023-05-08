@@ -8,7 +8,6 @@
   top: 0;
   z-index: 5;
   background: rgba(102, 102, 100, 0.8);
-  transition: 0.3s;
 }
 
 .modal-background-img {
@@ -49,6 +48,26 @@
 .movieDetail-description {
   margin: 0;
   text-align: justify;
+  padding: 10px;
+  margin: 0;
+  max-height: 120px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.movieDetail-description::-webkit-scrollbar {
+  width: 3px;
+}
+ 
+.movieDetail-description::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 2px;
+}
+ 
+.movieDetail-description::-webkit-scrollbar-thumb {
+  background-color: var(--orange3);
+  outline: 1px solid var(--orange3);
+  border-radius: 2px;
 }
 
 .button-container {

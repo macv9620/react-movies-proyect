@@ -30,7 +30,7 @@ const SeasonsInfo = ({ showSeasonsDetail }) => {
                 return (
                   <CAccordionBody
                     key={i}
-                  >{`S${season.data.season_number} E${episode.episode_number}: ${episode.name}`}
+                  ><strong>S{season.data.season_number} E{episode.episode_number}:</strong> {episode.name}
                   </CAccordionBody>
                 )
               })}

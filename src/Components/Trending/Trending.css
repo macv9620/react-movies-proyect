@@ -43,8 +43,8 @@
   }
    
   .trendingPreview-movieList::-webkit-scrollbar-thumb {
-    background-color: darkgrey;
-    outline: 1px solid slategrey;
+    background-color: var(--orange3);
+    outline: 1px solid var(--orange3);
     border-radius: 2px;
   }
 
