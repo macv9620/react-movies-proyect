@@ -48,7 +48,12 @@ function useApiDetail (id) {
             .then((res) => {
               seasonsCompleteDetail.push(res)
               if (seasonNumber === numberOfSeasons) {
-                setShowSeasonsDetail(seasonsCompleteDetail)
+                setTimeout(() => {
+                  const orderedSeasons = seasonsCompleteDetail.sort((a, b) => {
+                    return Number(a.data.season_number) - Number(b.data.season_number)
+                  })
+                  setShowSeasonsDetail(orderedSeasons)
+                }, 0)
                 console.log(seasonsCompleteDetail)
               }
             })

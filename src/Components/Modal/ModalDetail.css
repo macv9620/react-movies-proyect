@@ -1,74 +1,85 @@
-.movieDetail-modal{
-    position: fixed;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100vw;
-    height: 100vh;
-    top: 0;
-    z-index: 2;
-    background: rgba(102, 102, 100, 0.8);
-    transition: 0.3s;
-
+.movieDetail-modal {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  z-index: 5;
+  background: rgba(102, 102, 100, 0.8);
+  transition: 0.3s;
 }
 
-.modal-background-img{
-    height: 90vh;
-    width: 80%;
-    min-width: 320px;
-    max-width: 400px;
-    display: flex;
-    align-items: end;
+.modal-background-img {
+  height: 90vh;
+  width: 80%;
+  min-width: 320px;
+  max-width: 400px;
+  display: flex;
+  align-items: end;
 }
 
 .movieDetail-container {
-    width: 100%;
-    border-radius: 16px;
-    background: white;
-    padding: 15px;
+  width: 100%;
+  border-radius: 16px;
+  background: white;
+  padding: 15px;
+}
 
-  }
+.movieDetail-title {
+  display: inline-block;
+  margin: 0 0 16px 0;
+  width: 85%;
+  padding: 0;
+}
 
-  .movieDetail-title {
-    display: inline-block;
-    margin: 0 0 16px 0;
-    width: 85%;
-    padding: 0;
-  }
+.movieDetail-score {
+  display: inline-block;
+  width: 10%;
+  font-weight: var(--font-weight-title2);
+}
 
-  .movieDetail-score {
-    display: inline-block;
-    width: 10%;
-    font-weight: var(--font-weight-title2);
-  }
-  
-  .movieDetail-score::before {
-    content: "★";
-    color: var(--orange2);
-    padding-right: 4px;
-  }
+.movieDetail-score::before {
+  content: "★";
+  color: var(--orange2);
+  padding-right: 4px;
+}
 
-  .movieDetail-description {
-    margin: 0;
-    text-align: justify;
-  }
+.movieDetail-description {
+  margin: 0;
+  text-align: justify;
+}
 
-  .button-container{
-    display: flex;
-    justify-content: center;
-  }
+.button-container {
+  display: flex;
+  justify-content: center;
+}
 
-  .more-detail-button{
-    border-style: none;
-    margin-top: 10px;
-    background-color: var(--green1);
-    color: white;
-    width: 100px;
-    border-radius: 8px;
-  }
+.more-detail-button {
+  border-style: none;
+  margin-top: 10px;
+  background-color: var(--green1);
+  color: white;
+  width: 100px;
+  border-radius: 8px;
+  transition: 0.5s;
+}
 
-  .more-detail-button:hover{
-    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
-    transition: 1ms;
-  }
-  
+.more-detail-button a {
+  text-decoration: none;
+  color: white;
+}
+
+.more-detail-button a:hover {
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  transition: 1ms;
+  color: white;
+}
+
+.more-detail-button:hover {
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 0px 12px;
+  transition: 1ms;
+  color: white;
+  transition: 0.5s;
+}
