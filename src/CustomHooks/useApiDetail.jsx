@@ -13,9 +13,13 @@ const api = axios.create({
 })
 
 function useApiDetail (id) {
+  // castList, loadingCast
   // const [loadingShowDetail, setLoadingShowDetail] = useState(false)
   const [showDetail, setShowDetail] = useState(null)
   const [showSeasonsDetail, setShowSeasonsDetail] = useState(null)
+
+  const [castList, setCastList] = useState(null)
+  const [loadingCast, setLoadingCast] = useState(true)
   // hacer varias peticiones
   useEffect(() => {
     setTimeout(() => {
@@ -27,6 +31,20 @@ function useApiDetail (id) {
           setShowDetail(res)
           // console.log(showDetail)
           // setLoadingShowDetail(false)
+        })
+        .catch((err) => console.log(err))
+    }, 0)
+  }, [id])
+
+  useEffect(() => {
+    setTimeout(() => {
+      console.log('Lamando API CastDetail')
+      console.log(id)
+      api
+        .get(`tv/${id}/aggregate_credits`)
+        .then((res) => {
+          setCastList(res)
+          setLoadingCast(false)
         })
         .catch((err) => console.log(err))
     }, 0)
@@ -61,20 +79,11 @@ function useApiDetail (id) {
               console.log(err)
             })
         }
-
-        // api.get('tv/1396/season/1')
-        //   .then((res) => {
-        //     setShowSeasonsDetail(res)
-        //   })
-        //   .catch((err) => {
-        //     console.log(err)
-        //   })
-        // console.log(showSeasonsDetail)
       }
     }, 0)
   }, [showDetail, id])
 
-  return { showDetail, showSeasonsDetail }
+  return { showDetail, showSeasonsDetail, castList, loadingCast }
 }
 
 export { useApiDetail }
