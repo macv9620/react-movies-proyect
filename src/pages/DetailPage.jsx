@@ -4,6 +4,7 @@ import { SeasonsInfo } from '../Components/SeasonsInfo/SeasonsInfo.jsx'
 import { useApiDetail } from '../CustomHooks/useApiDetail.jsx'
 import { useParams } from 'react-router-dom'
 import { ShowCast } from '../Components/ShowCastList/ShowCastList.jsx'
+import { LoadingSpinner } from '../Components/LoadingSpinner/LoadingSpinner.jsx'
 
 const BASE_URL_IMAGE = 'https://image.tmdb.org/t/p/w500'
 
@@ -13,13 +14,14 @@ const DetailPage = () => {
 
   if (!castList) {
     return (
-      <p>Cargando</p>
+      <LoadingSpinner />
     )
   }
 
   console.log('Cast List', castList.data.cast.slice(0, 10))
   return (
     <>
+      {}
       <MovieDetail showDetail={showDetail} />
       <ShowCast>
         {!loadingCast &&

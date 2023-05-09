@@ -15,8 +15,10 @@ const api = axios.create({
 
 const useApiSearch = (inputSearch) => {
   const [searchResult, setSearchResult] = useState('')
+  const [loadingSearch, setLoadingSearch] = useState(true)
 
   useEffect(() => {
+    setLoadingSearch(true)
     if (inputSearch) {
       setTimeout(() => {
         console.log('Lamando API Search')
@@ -29,13 +31,14 @@ const useApiSearch = (inputSearch) => {
           .then((res) => res.data.results)
           .then((shows) => {
             setSearchResult(shows)
+            setLoadingSearch(false)
           })
           .catch((err) => console.log(err))
-      }, 0)
+      }, 1000)
     }
   }, [inputSearch])
 
-  return { searchResult }
+  return { searchResult, setLoadingSearch, loadingSearch }
 }
 
 export { useApiSearch }

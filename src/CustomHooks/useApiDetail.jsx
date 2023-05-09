@@ -47,7 +47,7 @@ function useApiDetail (id) {
           setLoadingCast(false)
         })
         .catch((err) => console.log(err))
-    }, 0)
+    }, 2000)
   }, [id])
 
   useEffect(() => {

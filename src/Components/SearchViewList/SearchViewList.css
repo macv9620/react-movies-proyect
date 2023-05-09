@@ -6,6 +6,17 @@
   box-shadow: inset 0 0 30px #131313;
 }
 
+.search-result-container a{
+  text-decoration: none;
+  color: black;
+}
+
+.search-result-container a:hover{
+  text-decoration: none;
+  color: black;
+}
+
+
 .item-container {
   display: flex;
   flex-direction: row;
@@ -33,10 +44,10 @@
 }
 
 .show-info-overview p{
-  max-width: 280px; /* Ancho máximo del contenedor */
-  overflow: hidden; /* Para ocultar el texto que desborda */
-  text-overflow: ellipsis; /* Mostrar puntos suspensivos al final del texto */
-  white-space: nowrap; /* Para evitar que el texto se divida en varias líneas */
+  max-width: 280px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .show-info-title{

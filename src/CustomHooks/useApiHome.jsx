@@ -32,7 +32,7 @@ function useApiHome () {
           setLoadingTopRated(false)
         })
         .catch((err) => console.log(err))
-    }, 0)
+    }, 2000)
   }, [])
 
   useEffect(() => {
@@ -48,7 +48,7 @@ function useApiHome () {
         })
 
         .catch((err) => console.log(err))
-    }, 0)
+    }, 1000)
   }, [])
 
   return { topRatedShows, loadingTopRated, trendingShows, loadingTrendingShows }

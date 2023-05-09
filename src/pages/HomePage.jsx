@@ -4,6 +4,7 @@ import { Carousel } from '../Components/Carousel/Carousel'
 import { useModal } from '../CustomHooks/useModal'
 import { ModalDetail } from '../Components/Modal/ModalDetail'
 import { CloseModalButton } from '../Components/CloseModalButton/CloseModalButton'
+import { LoadingSpinner } from '../Components/LoadingSpinner/LoadingSpinner'
 
 const BASE_URL_IMAGE = 'https://image.tmdb.org/t/p/w500'
 
@@ -24,9 +25,10 @@ function HomePage () {
   // console.log(topRatedShows)
   return (
     <>
+      {(loadingTrendingShows || loadingTopRated) && <LoadingSpinner />}
       {(!loadingTrendingShows) && <Carousel trendingShows={trendingShows} modalIsActive={modalIsActive} openModal={openModal} />}
-      <Trending>
-        {!loadingTopRated &&
+      {!loadingTopRated && <Trending>
+        {
           topRatedShows.map((show, i) => {
             const modalInfo = {
               id: show.id,
@@ -46,8 +48,9 @@ function HomePage () {
                 />
               </li>
             )
-          })}
-      </Trending>
+          })
+}
+      </Trending>}
       {modalIsActive && <ModalDetail modalContent={modalContent} />}
       {modalIsActive && <CloseModalButton closeModal={closeModal} />}
     </>
