@@ -1,5 +1,4 @@
 import './Header.css'
-import logoIcon from '../../assets/drama.png'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 
@@ -19,7 +18,7 @@ function Header () {
         <p className='header-info-welcome'>Your-Show</p>
       </div>
       <div className='header-logo'>
-        <img src={logoIcon} className='logo' />
+        <img src='https://i.ibb.co/37wBJc3/drama.png' className='logo' />
       </div>
       <div className='header-search-bar'>
         <input

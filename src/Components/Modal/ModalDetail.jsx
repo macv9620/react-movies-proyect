@@ -1,6 +1,6 @@
+/* eslint-disable react/prop-types */
 import React from 'react'
 import './ModalDetail.css'
-import { useModal } from '../../CustomHooks/useModal'
 import { Link } from 'react-router-dom'
 
 const ModalDetail = ({ modalContent }) => {
@@ -26,7 +26,7 @@ const ModalDetail = ({ modalContent }) => {
       >
         <section id='movieDetail' className='movieDetail-container'>
           <h1 className='movieDetail-title'>{name}</h1>
-          <span className='movieDetail-score'>{score}</span>
+          <span className='movieDetail-score'>{score.toFixed(1)}</span>
           <p className='movieDetail-description'>
             {overview}
           </p>

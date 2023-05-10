@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-closing-tag-location */
 import { Trending } from '../Components/Trending/Trending'
 import { useApiHome } from '../CustomHooks/useApiHome'
 import { Carousel } from '../Components/Carousel/Carousel'

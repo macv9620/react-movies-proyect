@@ -1,7 +1,6 @@
 import React from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import './HomeButton.css'
-import homeIcon from '../../assets/home.png'
 
 const HomeButton = () => {
   const location = useLocation()
@@ -12,7 +11,7 @@ const HomeButton = () => {
         className='TodoButtonHome'
       >
         <Link to='/'>
-          <img className='home-icon' src={homeIcon} />
+          <img className='home-icon' src='https://i.ibb.co/rFZqpK8/home.png' />
         </Link>
       </button>
     )
