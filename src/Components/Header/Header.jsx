@@ -15,7 +15,7 @@ function Header () {
   return (
     <header className='main-header'>
       <div className='header-info'>
-        <p className='header-info-welcome'>Your-Show</p>
+        <p className='header-info-welcome'>hangOutApp</p>
       </div>
       <div className='header-logo'>
         <img src='https://i.ibb.co/37wBJc3/drama.png' className='logo' />

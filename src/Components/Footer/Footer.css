@@ -4,6 +4,7 @@
     align-items: center;
     background-color: var(--green1);
     color: white;
+    margin-top: auto;
 }
 
 .footer-author{

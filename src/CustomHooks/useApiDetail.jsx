@@ -71,7 +71,7 @@ function useApiDetail (id) {
                     return Number(a.data.season_number) - Number(b.data.season_number)
                   })
                   setShowSeasonsDetail(orderedSeasons)
-                }, 0)
+                }, 500)
                 console.log(seasonsCompleteDetail)
               }
             })
