@@ -23,7 +23,6 @@ function useApiHome () {
 
   useEffect(() => {
     setTimeout(() => {
-      console.log('Lamando API TopRated')
       api
         .get('tv/top_rated')
         .then((res) => res.data.results)
@@ -37,7 +36,6 @@ function useApiHome () {
 
   useEffect(() => {
     setTimeout(() => {
-      console.log('Lamando API Trending')
       api
         .get(
           'trending/tv/day')

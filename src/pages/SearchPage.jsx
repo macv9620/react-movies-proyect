@@ -6,7 +6,6 @@ import { LoadingSpinner } from '../Components/LoadingSpinner/LoadingSpinner'
 
 const SearchPage = () => {
   const { valueToSearch } = useParams()
-  console.log(valueToSearch)
 
   const { searchResult, loadingSearch } = useApiSearch(valueToSearch)
 

@@ -18,7 +18,6 @@ const DetailPage = () => {
     )
   }
 
-  console.log('Cast List', castList.data.cast.slice(0, 10))
   return (
     <>
       {}

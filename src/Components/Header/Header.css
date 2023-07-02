@@ -83,5 +83,17 @@
   transition: 0.5s;
 }
 
+@media (max-width: 500px) {
+  .header-info {
+    display: none;
+  }
+
+  .main-header {
+    gap: 0px;
+    width: 100vw;
+    padding: 0px 10px;
+  }
+}
+
 
 

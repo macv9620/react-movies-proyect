@@ -12,7 +12,7 @@ const MovieDetail = ({ showDetail }) => {
   if (!showDetail) {
     return <p>Cargando</p>
   }
-  // console.log(showDetail)
+
   return (
     <div
       style={{

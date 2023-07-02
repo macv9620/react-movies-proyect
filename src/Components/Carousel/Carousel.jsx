@@ -6,9 +6,8 @@ import {
 } from '@coreui/react'
 import { BASE_URL_IMAGE } from '../../pages/HomePage'
 import './Carousel.css'
-import { useModal } from '../../CustomHooks/useModal'
 
-function Carousel ({ trendingShows, openModal }) {
+function Carousel ({ trendingShows, openModal, screenWidth }) {
   return (
     <div className='back-ground-container'>
       <div className='carousel-container'>
@@ -30,7 +29,13 @@ function Carousel ({ trendingShows, openModal }) {
               >
                 <CImage
                   align='center'
-                  className='d-block w-25 carousel-img'
+                  className={screenWidth < 600
+                    ? (
+                        screenWidth < 470
+                          ? 'd-block w-75 carousel-img'
+                          : 'd-block w-50 carousel-img'
+                      )
+                    : 'd-block w-25 carousel-img'}
                   src={
                     BASE_URL_IMAGE + show.poster_path
                   }

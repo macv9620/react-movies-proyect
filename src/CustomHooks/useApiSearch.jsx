@@ -21,7 +21,6 @@ const useApiSearch = (inputSearch) => {
     setLoadingSearch(true)
     if (inputSearch) {
       setTimeout(() => {
-        console.log('Lamando API Search')
         api
           .get('search/tv', {
             params: {

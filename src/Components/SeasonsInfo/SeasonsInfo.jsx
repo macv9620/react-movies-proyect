@@ -5,7 +5,6 @@ import { CAccordion, CAccordionBody, CAccordionHeader, CAccordionItem } from '@c
 
 // eslint-disable-next-line react/prop-types
 const SeasonsInfo = ({ showSeasonsDetail }) => {
-  console.log('Resultado detalle de temporadas', showSeasonsDetail)
 
   if (!showSeasonsDetail) {
     return (

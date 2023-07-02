@@ -4,7 +4,7 @@ import './HomeButton.css'
 
 const HomeButton = () => {
   const location = useLocation()
-  console.log(location)
+
   if (location.pathname !== '/') {
     return (
       <button

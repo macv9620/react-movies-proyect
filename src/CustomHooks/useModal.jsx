@@ -11,11 +11,6 @@ function useModal () {
     score,
     overview
   }) => {
-    console.log(id,
-      imgURL,
-      name,
-      score,
-      overview)
     setModalContent({
       id,
       imgURL,

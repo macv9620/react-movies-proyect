@@ -12,7 +12,7 @@ const ModalDetail = ({ modalContent }) => {
     overview
   } = modalContent
 
-  // console.log(modalContent)
+
   return (
     <div className='movieDetail-modal'>
       <div

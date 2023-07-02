@@ -6,7 +6,7 @@ const BASE_URL_IMAGE = 'https://image.tmdb.org/t/p/w500'
 
 // eslint-disable-next-line react/prop-types
 const SearchViewList = ({ searchResult }) => {
-  console.log(searchResult)
+
 
   // eslint-disable-next-line react/prop-types
   const filteredImagesResult = searchResult.filter((show) => {

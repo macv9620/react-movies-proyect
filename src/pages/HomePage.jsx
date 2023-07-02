@@ -6,10 +6,26 @@ import { useModal } from '../CustomHooks/useModal'
 import { ModalDetail } from '../Components/Modal/ModalDetail'
 import { CloseModalButton } from '../Components/CloseModalButton/CloseModalButton'
 import { LoadingSpinner } from '../Components/LoadingSpinner/LoadingSpinner'
+import { useEffect, useState } from 'react'
 
 const BASE_URL_IMAGE = 'https://image.tmdb.org/t/p/w500'
 
 function HomePage () {
+  const [screenWidth, setScreenWidth] = useState(null)
+
+  useEffect(() => {
+    setScreenWidth(window.innerWidth)
+  }, [])
+
+  useEffect(() => {
+    const handleResize = (e) => {
+      setScreenWidth(e.srcElement.innerWidth)
+    }
+    window.addEventListener('resize', handleResize)
+    return () => {
+      window.removeEventListener('resize', handleResize)
+    }
+  })
   const {
     topRatedShows,
     loadingTopRated,
@@ -23,11 +39,10 @@ function HomePage () {
     closeModal,
     modalContent
   } = useModal()
-  // console.log(topRatedShows)
   return (
     <>
       {(loadingTrendingShows || loadingTopRated) && <LoadingSpinner />}
-      {(!loadingTrendingShows) && <Carousel trendingShows={trendingShows} modalIsActive={modalIsActive} openModal={openModal} />}
+      {(!loadingTrendingShows) && <Carousel screenWidth={screenWidth} trendingShows={trendingShows} modalIsActive={modalIsActive} openModal={openModal} />}
       {!loadingTopRated && <Trending>
         {
           topRatedShows.map((show, i) => {

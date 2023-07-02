@@ -23,13 +23,11 @@ function useApiDetail (id) {
   // hacer varias peticiones
   useEffect(() => {
     setTimeout(() => {
-      console.log('Lamando API ShowDetail')
-      console.log(id)
       api
         .get(`tv/${id}`)
         .then((res) => {
           setShowDetail(res)
-          // console.log(showDetail)
+
           // setLoadingShowDetail(false)
         })
         .catch((err) => console.log(err))
@@ -38,8 +36,6 @@ function useApiDetail (id) {
 
   useEffect(() => {
     setTimeout(() => {
-      console.log('Lamando API CastDetail')
-      console.log(id)
       api
         .get(`tv/${id}/aggregate_credits`)
         .then((res) => {
@@ -51,17 +47,13 @@ function useApiDetail (id) {
   }, [id])
 
   useEffect(() => {
-    // console.log(showDetail)
     setTimeout(() => {
       if (showDetail) {
-        console.log('showDetail', showDetail)
-        console.log('Lamando API ShowSeasonsDetail')
         const numberOfSeasons = showDetail.data.number_of_seasons
 
         const seasonsCompleteDetail = []
 
         for (let seasonNumber = 1; seasonNumber <= numberOfSeasons; seasonNumber++) {
-          console.log(seasonNumber)
           api.get(`tv/${id}/season/${seasonNumber}`)
             .then((res) => {
               seasonsCompleteDetail.push(res)
@@ -72,7 +64,6 @@ function useApiDetail (id) {
                   })
                   setShowSeasonsDetail(orderedSeasons)
                 }, 500)
-                console.log(seasonsCompleteDetail)
               }
             })
             .catch((err) => {
