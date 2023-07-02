@@ -20,20 +20,18 @@ const useApiSearch = (inputSearch) => {
   useEffect(() => {
     setLoadingSearch(true)
     if (inputSearch) {
-      setTimeout(() => {
-        api
-          .get('search/tv', {
-            params: {
-              query: inputSearch
-            }
-          })
-          .then((res) => res.data.results)
-          .then((shows) => {
-            setSearchResult(shows)
-            setLoadingSearch(false)
-          })
-          .catch((err) => console.log(err))
-      }, 1000)
+      api
+        .get('search/tv', {
+          params: {
+            query: inputSearch
+          }
+        })
+        .then((res) => res.data.results)
+        .then((shows) => {
+          setSearchResult(shows)
+          setLoadingSearch(false)
+        })
+        .catch((err) => console.log(err))
     }
   }, [inputSearch])
 

@@ -22,31 +22,27 @@ function useApiHome () {
   const [loadingTrendingShows, setLoadingTrendingShows] = useState(true)
 
   useEffect(() => {
-    setTimeout(() => {
-      api
-        .get('tv/top_rated')
-        .then((res) => res.data.results)
-        .then((shows) => {
-          setTopRatedShows(shows)
-          setLoadingTopRated(false)
-        })
-        .catch((err) => console.log(err))
-    }, 2000)
+    api
+      .get('tv/top_rated')
+      .then((res) => res.data.results)
+      .then((shows) => {
+        setTopRatedShows(shows)
+        setLoadingTopRated(false)
+      })
+      .catch((err) => console.log(err))
   }, [])
 
   useEffect(() => {
-    setTimeout(() => {
-      api
-        .get(
-          'trending/tv/day')
-        .then((res) => res.data.results.slice(0, 10))
-        .then((trendingShows) => {
-          setTrendingShows(trendingShows)
-          setLoadingTrendingShows(false)
-        })
+    api
+      .get(
+        'trending/tv/day')
+      .then((res) => res.data.results.slice(0, 10))
+      .then((trendingShows) => {
+        setTrendingShows(trendingShows)
+        setLoadingTrendingShows(false)
+      })
 
-        .catch((err) => console.log(err))
-    }, 1000)
+      .catch((err) => console.log(err))
   }, [])
 
   return { topRatedShows, loadingTopRated, trendingShows, loadingTrendingShows }

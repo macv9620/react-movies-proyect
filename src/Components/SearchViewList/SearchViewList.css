@@ -74,7 +74,13 @@
     width: 330px;
   }
 
-  .show-info-overview p{
-    max-width: 210px;
+  .show-info {
+    width: 70%;
+    padding-right: 10px;
   }
+
+  .show-info-overview {
+    display: none;
+  }
+
 }
